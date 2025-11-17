@@ -24,5 +24,15 @@ namespace SisEdu.Modelo
             this.telefono = telefono_;
             this.id_unidad = id_unidad_;
         }
+        public Docente()
+        {
+            this.id_docente = 0;
+            this.nombre = "";
+            this.apellido = "";
+            this.ci = "";
+            this.correo = "";
+            this.telefono = "";
+            this.id_unidad = 0;
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SisEdu.Controlador;
+using SisEdu.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +25,21 @@ namespace SisEdu.Vista
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            DocenteControlador doc = new DocenteControlador();
+            string email = txtUser.Text;
+            string ci = txtPass.Text;
+
+            bool inicio = doc.iniciarSesion(email, ci);
+            if (inicio) 
+            {
+                Home home = new Home(email);
+                home.Show();
+                this.Hide();
+            }
         }
     }
 }
