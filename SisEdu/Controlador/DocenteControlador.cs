@@ -14,9 +14,9 @@ namespace SisEdu.Controlador
             return docenteBD.obtenerDocente(email);
         }
 
-        public bool iniciarSesion(string correo, string contrasena)
+        public int iniciarSesion(string correo, string contrasena)
         {
-            bool respuesta = false;
+            int respuesta = 0;
             if (correo == string.Empty || contrasena == string.Empty)
             {
                 MessageBox.Show("Debe ingresar datos obligatorios");
@@ -31,7 +31,7 @@ namespace SisEdu.Controlador
             {
                 if (docente.ci == contrasena)
                 {
-                    respuesta = true;
+                    respuesta = docente.id_docente;
                     MessageBox.Show($"Bienvenid@ {docente.nombre} {docente.apellido}");
                 }
                 else

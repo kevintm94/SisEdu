@@ -33,10 +33,10 @@ namespace SisEdu.Vista
             string email = txtUser.Text;
             string ci = txtPass.Text;
 
-            bool inicio = doc.iniciarSesion(email, ci);
-            if (inicio) 
+            int id = doc.iniciarSesion(email, ci);
+            if (id != 0) 
             {
-                Home home = new Home(email);
+                Home home = new Home(id);
                 home.Show();
                 this.Hide();
             }

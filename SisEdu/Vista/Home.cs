@@ -10,14 +10,16 @@ namespace SisEdu.Vista
 {
     public partial class Home : Form
     {
-        public Home(string correo)
+        private int id_docente;
+        public Home(int id)
         {
+            this.id_docente = id;
             InitializeComponent();
         }
 
         private void registrarAsistenciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Asistencia asistencia = new Asistencia();
+            Asistencia asistencia = new Asistencia(id_docente);
             asistencia.ShowDialog();
         }
 
